@@ -109,6 +109,10 @@ public class Test {
         m3.afficheSalaires();
         System.out.println("Afficher Prime Responsable");
         m3.affichePrimesResponsables();
+        m4.affichePrimesResponsables();
+
+
+
 
     }
 

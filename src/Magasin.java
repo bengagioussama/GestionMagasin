@@ -183,6 +183,8 @@ public class Magasin {
             }
         }
     }
+
+
     public void afficheNbEmployes() {
         int nbCaissiers = 0;
         int nbVendeurs = 0;
