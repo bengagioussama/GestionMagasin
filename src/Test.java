@@ -2,8 +2,7 @@
 import java.util.Date;
 public class Test {
 
-    public static  void main(String [] arg )
-    {
+    public static  void main(String [] arg ) throws MagasinPleinException , PrixNegatifException {
 
 
 
@@ -14,7 +13,6 @@ public class Test {
         Produit p3=new Produit(2510,"Vitalait","Yaourt");
         Produit p4=new Produit(3250,"Sicam","Tomate",1.2f );
         //
-
 
 
         p1.setMarque("Delice");

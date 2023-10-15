@@ -23,20 +23,29 @@ public class Magasin {
         this.nom = nom;
         adresse=ad;
     }
-    public  void ajouter(Produit p)
-    {if(chercherPro(p)==false){
-        if(comp<CAPACITE_PR){
-            tabprod[comp]=p;
-            comp++;
-            totalPr++;}
-        else{
+    public  void ajouter(Produit p) throws MagasinPleinException , PrixNegatifException {
+        if (p.getPrix() < 0) {
+            throw new PrixNegatifException("Prix Negatif ");
+        }
+        else if (tabprod.length == totalProduits()) {
+            throw new MagasinPleinException("Le Magasin est Plein ");
+        }
+        else {
+            if(chercherPro(p)==false){
+                if(comp<CAPACITE_PR){
+                    tabprod[comp]=p;
+                    comp++;
+                    totalPr++;}
+                else{
 
-            System.out.println("Magasin plein");
-        }}
-    else {
+                    System.out.println("Magasin plein");
+                }}
+            else {
 
-        System.out.println("le produit existe");
-    }
+                System.out.println("le produit existe");
+            }
+        }
+
     }
 
     public void afficher()
@@ -151,6 +160,15 @@ public class Magasin {
             }
 
         }
+    }
+    public int totalProduits () {
+        int comp = 0;
+        for (int i= 0 ; i<tabprod.length ; i++) {
+            if (tabprod[i] != null) {
+                comp++;
+            }
+        }
+        return comp;
     }
 
     @Override
